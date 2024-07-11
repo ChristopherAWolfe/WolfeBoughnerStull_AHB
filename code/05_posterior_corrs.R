@@ -26,7 +26,7 @@ cors <- matrix(data = fit$summary("Omega")$mean, nrow = 8, ncol = 8,
                dimnames = list(dims, dims))
 
 ## Plot
-ggplot(melt(get_upper_tri(human_age_cor)
+ggplot(melt(get_upper_tri(cors)
             , na.rm = TRUE), aes(Var1, Var2, fill=value)) + 
   geom_tile(height=0.8, width=0.8, color = "black") + 
   scale_fill_gradient2(low="#FFF5F0" , mid="#FCBBA1", high="#99000D", 

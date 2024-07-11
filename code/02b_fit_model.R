@@ -13,7 +13,7 @@
 # be saved to the project directory.
 
 ## Import Stan model from directory
-mod <- cmdstan_model("mvp_ordinal.stan")
+mod <- cmdstan_model("stan_models/mvp_ordinal.stan")
 
 ## Prep Stan data
 standat <- list(D = 8,

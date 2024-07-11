@@ -23,19 +23,25 @@ colnames(human_dat) <- c("Age","I1","I2","C","P3","P4","M1","M2","M3")
 ## Import and munge the Pan dataset
 pan_dat <- read.csv("data/pan.csv")
 pan_dat[pan_dat == 0] <- 99
-pan_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, ifelse(age_group == "J1", 1, ifelse(age_group == "J2", 2,3))))
+pan_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, 
+                                 ifelse(age_group == "J1", 1, 
+                                        ifelse(age_group == "J2", 2,3))))
 colnames(pan_dat) <- c("Age","I1","I2","C","P3","P4","M1","M2","M3")
 
 ## Import and munge the Papio dataset
 papio_dat <- read.csv("data/papio.csv")
 papio_dat[papio_dat == 0] <- 99
-papio_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, ifelse(age_group == "J1", 1, ifelse(age_group == "J2", 2,3))))
+papio_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, 
+                                   ifelse(age_group == "J1", 1, 
+                                          ifelse(age_group == "J2", 2,3))))
 colnames(papio_dat) <- c("Age","I1","I2","C","P3","P4","M1","M2","M3")
 
 ## Import and munge the Hylobates dataset
 hylobates_dat <- read.csv("data/hylobates.csv")
 hylobates_dat[hylobates_dat == 0] <- 99
-hylobates_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, ifelse(age_group == "J1", 1, ifelse(age_group == "J2", 2,3))))
+hylobates_dat %<>% mutate(Age = ifelse(age_group == "INF", 0, 
+                                       ifelse(age_group == "J1", 1, 
+                                              ifelse(age_group == "J2", 2,3))))
 colnames(hylobates_dat) <- c("Age","I1","I2","C","P3","P4","M1","M2","M3")
 
 ######################################END#######################################

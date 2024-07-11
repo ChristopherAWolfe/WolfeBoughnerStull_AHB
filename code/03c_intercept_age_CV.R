@@ -14,8 +14,8 @@
 set.seed(855)
 
 ## Import Models
-full_mod <- cmdstan_model("mvp_intercept.stan")
-test_mod <- cmdstan_model("mvp_intercept_log_lik.stan")
+full_mod <- cmdstan_model("stan_models/mvp_intercept.stan")
+test_mod <- cmdstan_model("stan_models/mvp_intercept_log_lik.stan")
 
 ## Prep folds
 dat$fold <- kfold_split_random(K = 5, N = nrow(dat))
