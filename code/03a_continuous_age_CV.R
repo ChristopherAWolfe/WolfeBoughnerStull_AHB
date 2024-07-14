@@ -18,6 +18,8 @@ full_mod <- cmdstan_model("stan_models/mvp_continuous.stan")
 test_mod <- cmdstan_model("stan_models/mvp_continuous_log_lik.stan")
 
 ## Prep folds
+samp <- sample(nrow(dat),500)
+dat <- dat[samp,]
 dat$fold <- kfold_split_random(K = 5, N = nrow(dat))
 
 ## Prepare a matrix with the number of post-warmup iterations by observations
